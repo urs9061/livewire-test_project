@@ -1,5 +1,5 @@
 <div>
-    <h1>Add a New Student</h1>
+    <h2>Add a New Student</h2>
         <table>
             @csrf
         <tr><th><label for="firstname">First Name</label></th>
@@ -24,7 +24,8 @@
         <tr><th><label for="tp_no">T.P Number</label></th>
         <td><input type="text" id="tp_no" name="tp_no" wire:model="tp_no"></td></tr> 
     </table>
-    <button wire:click="store_student">Add Student</button>   
+    <button wire:click="store_student">Add Student</button>
+
 {{-- {{$first_name}}
 {{$last_name}}
 {{$grade}}

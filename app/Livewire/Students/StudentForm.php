@@ -26,7 +26,7 @@ class StudentForm extends Component
             'address' => 'required|string|max:200',
             'tp_no' => 'required|string|max:15',
         ]);
-        StudentForm::create([
+        Student:create([
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'grade' => $this->grade,
