@@ -17,6 +17,7 @@ class StudentForm extends Component
     
     public function store_student()
     {
+        Student new Student(); 
         $this->validate([
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
