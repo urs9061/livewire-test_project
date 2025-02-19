@@ -14,10 +14,9 @@ class StudentForm extends Component
     public $gender;
     public $address;
     public $tp_no;
-    
+
     public function store_student()
     {
-        Student new Student(); 
         $this->validate([
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
@@ -27,7 +26,8 @@ class StudentForm extends Component
             'address' => 'required|string|max:200',
             'tp_no' => 'required|string|max:15',
         ]);
-        Student:create([
+
+        Student::create([
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'grade' => $this->grade,
@@ -36,11 +36,12 @@ class StudentForm extends Component
             'address' => $this->address,
             'tp_no' => $this->tp_no,
         ]);
+         session()->flash('message', 'Student Created Successfully.');
+        $this->reset(['first_name', 'last_name', 'grade', 'age', 'gender', 'address', 'tp_no']);
 
-        $this->reset(['first_name', 'last_name', 'grade','age','gender','address','tp_no']);
-
-        session()->flash('message', 'Student Created Successfully.');
+       
     }
+
     public function render()
     {
         return view('livewire.students.student-form');
