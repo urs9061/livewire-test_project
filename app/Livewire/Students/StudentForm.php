@@ -17,7 +17,7 @@ class StudentForm extends Component
 
     public function store_student()
     {
-        $this->validate([
+        $validated =$this->validate([
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
             'grade' => 'required|string|max:20',
@@ -26,6 +26,7 @@ class StudentForm extends Component
             'address' => 'required|string|max:200',
             'tp_no' => 'required|string|max:15',
         ]);
+        student::create($validated);
 
         Student::create([
             'first_name' => $this->first_name,

@@ -40,6 +40,7 @@
             </tr>
         </table>
         <button type="button" wire:click="store_student">Add Student</button>
+        <a href="/student/list">Student List</a>
     </form>
 
    
